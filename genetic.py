@@ -1,11 +1,10 @@
 import random
 
 # Dados do problema
-pesos = [66.7, 33.6, 80.0, 69.0, 9.6, 45.9, 59.9, 36.2, 73.3, 52.1, 86.0, 68.1, 82.5, 21.8, 76.4, 47.8, 11.3, 38.0, 81.4, 50.1, 43.8, 83.7, 69.4, 83.7, 17.2, 75.0, 97.9, 51.3, 94.8, 84.4, 69.3, 50.4, 56.7, 39.3, 68.9, 23.8, 53.1, 87.2, 5.2, 29.5]
+pesos = [1.5,1.0,2.0,0.5,0.8,0.4,0.5,0.9,0.6,0.7,1.2,0.5,1.0,0.9,1.1,0.8,0.6]
 
-calorias = [4.7, 50.0, 38.4, 23.1, 39.8, 2.6, 16.6, 56.2, 53.7, 7.4, 91.1, 22.6, 60.2, 83.5, 61.7, 38.8, 51.5, 67.0, 12.5, 2.3, 53.3, 4.4, 76.3, 42.5, 26.7, 12.5, 79.2, 61.6, 24.5, 64.3, 76.1, 43.4, 81.3, 8.5, 59.0, 75.1, 57.0, 6.3, 90.1, 53.4]
-
-peso_maximo = 80
+calorias = [500,300,800,150,600,250,250,400,700,150,300,720,350,330,450,500,240]
+peso_maximo = 9
 
 # Função de fitness
 def fitness(individuo):
@@ -60,7 +59,9 @@ def algoritmo_genetico(tamanho_populacao, num_geracoes, taxa_mutacao):
     return populacao[melhor_indice], max(fitnesses)
 
 # Executar o algoritmo
-melhor_solucao, melhor_fitness = algoritmo_genetico(tamanho_populacao=100, num_geracoes=50, taxa_mutacao=0.05)
-print("Melhor solução:", melhor_solucao)
-print("Fitness (calorias):", melhor_fitness)
+for i in range (6):
+    melhor_solucao, melhor_fitness = algoritmo_genetico(tamanho_populacao=100, num_geracoes=50, taxa_mutacao=0.05)
+    print("Melhor solução:", melhor_solucao)
+    print("Fitness (calorias):", melhor_fitness)
+    print("\n")
 
