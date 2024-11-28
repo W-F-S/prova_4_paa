@@ -97,7 +97,7 @@ def algoritmo_genetico(tamanho_populacao, num_geracoes, taxa_mutacao):
         fitnesses = [fitness(ind) for ind in populacao]
         nova_populacao = []
 
-        for _ in range(tamanho_populacao // 2):
+        for _ in range(tamanho_populacao // 2): #cada geração a populacao é duplicada
             individuo1 = selecionar_torneio(populacao, fitnesses)
             individuo2 = selecionar_torneio(populacao, fitnesses)
             filho1, filho2 = crossover(individuo1, individuo2)
@@ -112,9 +112,10 @@ def algoritmo_genetico(tamanho_populacao, num_geracoes, taxa_mutacao):
     return populacao[melhor_indice], max(fitnesses)
 
 # Executar o algoritmo
+print("Conjunto de soluções:\n\n")
 for i in range (3):
     melhor_solucao, melhor_fitness = algoritmo_genetico(tamanho_populacao=100, num_geracoes=50, taxa_mutacao=0.05)
-    print("Melhor solução:", melhor_solucao)
+    print(melhor_solucao)
     print("Total de calorias:", melhor_fitness)
     print("\n")
 
